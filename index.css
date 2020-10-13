@@ -1,7 +1,17 @@
+:root {
+  --main-text: #101010;
+  --main-bg: #ffffff;
+}
 @media (prefers-color-scheme: dark) {
-  body {
-    background-color: #242424;
-    color: #ffffff;
+  :root {
+    --main-text: #ffffff;
+    --main-bg: #242424;
     transition: .5s;
   }
+}
+
+ 
+body {
+  color: var(--main-text);
+  background-color: var(--main-bg);
 }
