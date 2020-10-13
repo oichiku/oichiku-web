@@ -25,4 +25,6 @@ header {
 }
 .headerimg{
   height: 10vh;
+  position: absolute;
+  left: 3vw;
 }
