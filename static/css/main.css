@@ -28,7 +28,7 @@ body {
   height: 10vh;
   opacity: 0.5;
 }
-.lazyload {
+.bg-stage.lazyloaded {
   height: 10vh;
   position: fixed;
   z-index: 30;
