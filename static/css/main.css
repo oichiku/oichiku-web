@@ -28,7 +28,7 @@ body {
   height: 10vh;
   opacity: 0.5;
 }
-.headerimg{
+.lazyload {
   height: 10vh;
   position: fixed;
   z-index: 30;
@@ -37,7 +37,7 @@ body {
   left: 3vw;
   opacity: 1;
 }
-.background{
+.background {
   width: 100vw;
   height: 100vh;
   position: fixed;
