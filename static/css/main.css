@@ -22,6 +22,8 @@ body {
   background-color: var(--ui-color);
   position: fixed;
   z-index: 20;
+  -webkit-transform: translate3d(0, 0, 20px);
+  transform: translate3d(0, 0, 20px);
   width: 100vw;
   height: 10vh;
   opacity: 0.5;
@@ -30,6 +32,8 @@ body {
   height: 10vh;
   position: fixed;
   z-index: 30;
+  -webkit-transform: translate3d(0, 0, 30px);
+  transform: translate3d(0, 0, 30px);
   left: 3vw;
   opacity: 1;
 }
@@ -43,6 +47,8 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   z-index: 0;
+  -webkit-transform: translate3d(0, 0, 0px);
+  transform: translate3d(0, 0, 0px);
 }
 .blank {
   opacity: 0;
@@ -52,5 +58,7 @@ body {
   background-color: var(--main-bg);
   position: absolute;
   z-index: 10;
+  -webkit-transform: translate3d(0, 0, 10px);
+  transform: translate3d(0, 0, 10px);
   width: 100vw;
 }
