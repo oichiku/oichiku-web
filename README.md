@@ -1,1 +1,1 @@
-[go to the page](https://oichiku.github.io/)
+[go to the page](https://oichiku.herokuapp.com/)
