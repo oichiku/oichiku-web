@@ -44,3 +44,13 @@ body {
   background-attachment: fixed;
   z-index: 0;
 }
+.blank {
+  opacity: 0;
+  height: 100vh;
+}
+.contents {
+  background-color: var(--main-bg);
+  position: absolute;
+  z-index: 10;
+  width: 100vw;
+}
