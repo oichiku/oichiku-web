@@ -1,13 +1,13 @@
 :root {
   --main-text: #101010;
   --main-bg: #ffffff;
-  --ui-color: #ffe6e6;
+  --ui-color: #ffbb99;
 }
 @media (prefers-color-scheme: dark) {
   :root {
     --main-text: #ffffff;
     --main-bg: #242424;
-    --ui-color: #ffbb99;
+    --ui-color: #ff9ee2;
     transition: .5s;
   }
 }
