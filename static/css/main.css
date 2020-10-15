@@ -25,13 +25,16 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-header {
+.headerbg {
   background-color: var(--ui-color);
+  position: absolute;
   width: 100vw;
   height: 10vh;
+  opacity: 0.5;
 }
 .headerimg{
   height: 10vh;
   position: absolute;
   left: 3vw;
+  opacity: 1;
 }
