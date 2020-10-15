@@ -7,7 +7,7 @@ def index():
   return render_template('index.html')
   
 @app.route('/<file>')
-def filename():
+def filename(file):
   return render_template(file)
 
 if __name__ == "__main__":
