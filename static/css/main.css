@@ -64,10 +64,8 @@ body {
 .pullup-icon {
   width: 200px;
   position: fixed;
-  bottom: -1px;
-}
-.pullup-icon .path1 {
-  fill: var(--ui-color);
+  bottom: 5vh;
+  -webkit-filter: drop-shadow(0 0 2px rgba(0, 0, 0, .5));
 }
 .contents {
   position: absolute;
