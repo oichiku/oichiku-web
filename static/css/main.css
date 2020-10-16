@@ -57,12 +57,15 @@ body {
   height: 100vh;
 }
 .contents {
-  background-color: var(--main-bg);
   position: absolute;
   z-index: 10;
   -webkit-transform: translate3d(0, 0, 10px);
   transform: translate3d(0, 0, 10px);
   width: 100vw;
+}
+.message {
+  background-color: var(--main-bg);
+  padding: 5%;
 }
 .iswd-base {
   width: 90vw;
