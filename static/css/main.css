@@ -57,12 +57,12 @@ body {
   height: 100vh;
 }
 .pullup {
-  width: 200px;
+  width: 100px;
   margin-left: auto;
   margin-right: auto;
 }
 .pullup-icon {
-  width: 200px;
+  width: 100px;
   position: fixed;
   bottom: 5vh;
   -webkit-filter: drop-shadow(0 0 2px rgba(0, 0, 0, .5));
