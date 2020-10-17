@@ -38,7 +38,6 @@ body {
   -webkit-transform: translate3d(0, 0, 30px);
   transform: translate3d(0, 0, 30px);
   left: 3vw;
-  opacity: 1;
 }
 .background {
   width: 100vw;
