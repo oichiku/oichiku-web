@@ -14,12 +14,12 @@
   }
 }
 
- 
 body {
   margin: 0px;
   color: var(--main-text);
   background-color: var(--main-bg);
   font-family: 'Noto Sans JP', sans-serif;
+  min-width: 100%;
 }
 .headerbg {
   background-color: var(--ui-color);
