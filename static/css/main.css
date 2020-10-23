@@ -22,14 +22,14 @@ body {
   min-width: 100%;
 }
 .headerbg {
-  background-color: var(--ui-color);
+  background-color: #ffffff;
   position: fixed;
   z-index: 20;
   -webkit-transform: translate3d(0, 0, 20px);
   transform: translate3d(0, 0, 20px);
   width: 100vw;
   height: 10vh;
-  opacity: 0.5;
+  opacity: 0;
 }
 .headerimg {
   height: 10vh;
