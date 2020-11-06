@@ -14,6 +14,6 @@ templates = Jinja2Templates(directory="templates")
 async def read_item(request: Request):
   return templates.TemplateResponse("index.html", {"request": request})
 
-@app.get("/webhook")
+@app.post("/webhook")
 async def webhook():
     subprocess.call("/home/tomoki/bin/oichiku-deploy")
