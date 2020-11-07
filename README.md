@@ -1,1 +1,1 @@
-[go to the page](https://oichiku.herokuapp.com/)
+[go to the page](http://34.83.114.11/)
