@@ -1,1 +1,1 @@
-[go to the page](http://34.83.114.11/)
+[go to the page](http://oichiku.ddo.jp/)
