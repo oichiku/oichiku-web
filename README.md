@@ -1,1 +1,1 @@
-[go to the page](http://oichiku.ddns.net/)
+[go to the page](http://oichiku.tk/)
