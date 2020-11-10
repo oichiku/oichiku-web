@@ -26,11 +26,11 @@ body {
   -webkit-transform: translate3d(0, 0, 20px);
   transform: translate3d(0, 0, 20px);
   width: 100vw;
-  height: 10vh;
+  height: 7vh;
   opacity: 0;
 }
 .headerimg {
-  height: 10vh;
+  height: 7vh;
   min-height: 60px;
   position: fixed;
   z-index: 30;
