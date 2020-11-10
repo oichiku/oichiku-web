@@ -37,6 +37,7 @@ body {
   transform: translate3d(0, 0, 30px);
   left: 3vw;
   top: 3vw;
+  display: none;
 }
 .background {
   width: 100vw;
