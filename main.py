@@ -21,7 +21,8 @@ async def read_item(request: Request):
 
 @app.post("/webhook")
 async def webhook():
-    subprocess.call("/home/tomoki/bin/oichiku-deploy")
+    res = subprocess.call("/home/tomoki/bin/oichiku-deploy")
+    return res
 
 @app.get("/{path_param}", response_class=HTMLResponse)
 async def subdir(path_param, request: Request):
