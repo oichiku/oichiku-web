@@ -2,7 +2,7 @@ from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
-import subprocess
+import subprocess, os, random
 
 app = FastAPI(docs_url=None, redoc_url=None)
 
@@ -15,7 +15,9 @@ def test():
 
 @app.get("/", response_class=HTMLResponse)
 async def read_item(request: Request):
-  return templates.TemplateResponse("index.html", {"request": request})
+    bgimg = os.listdir("static/images/background")
+    bgimg = bgimg[random.randint(0,len(bgimg)-1)]
+    return templates.TemplateResponse("index.html", {"request": request, "bgimage": bgimg})
 
 @app.post("/webhook")
 async def webhook():
