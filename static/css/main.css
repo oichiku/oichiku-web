@@ -54,6 +54,18 @@ body {
   opacity: 0;
   height: 100vh;
 }
+.oideyo {
+  height: 60vh;
+  width: 100vw;
+  position: fixed;
+  text-align: center;
+  z-index: 5;
+  -webkit-transform: translate3d(0, 10vh, 5px);
+  transform: translate3d(0, 10vh, 5px);
+}
+.oideyoimg {
+  height: 60vh;
+}
 .pullup {
   width: 100px;
   margin-left: auto;
