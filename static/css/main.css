@@ -83,10 +83,15 @@ body {
   -webkit-transform: translate3d(0, 0, 10px);
   transform: translate3d(0, 0, 10px);
   width: 100vw;
-  background-color: var(--main-bg);
 }
 .message {
   padding: 5%;
+  background-color: var(--main-bg);
+}
+footer {
+  padding: 1%;
+  background: rgba(0,0,0,0.5);
+  color: white;
 }
 .copyright {
   text-align: center;
