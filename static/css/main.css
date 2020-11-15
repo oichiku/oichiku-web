@@ -83,9 +83,9 @@ body {
   -webkit-transform: translate3d(0, 0, 10px);
   transform: translate3d(0, 0, 10px);
   width: 100vw;
+  background-color: var(--main-bg);
 }
 .message {
-  background-color: var(--main-bg);
   padding: 5%;
 }
 .copyright {
