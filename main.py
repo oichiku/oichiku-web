@@ -17,11 +17,12 @@ def test():
 async def read_item(request: Request):
     bgimg = os.listdir("static/images/background")
     bgimg = bgimg[random.randint(0,len(bgimg)-1)]
-    return templates.TemplateResponse("index.html", {"request": request, "bgimage": bgimg})
+    version = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
+    return templates.TemplateResponse("index.html", {"request": request, "bgimage": bgimg, "version": version})
 
 @app.post("/webhook")
 async def webhook():
-    res = subprocess.call("/home/tomoki/bin/oichiku-deploy")
+    res = subprocess.check_output("/home/tomoki/bin/oichiku-deploy")
     return res
 
 @app.get("/{path_param}", response_class=HTMLResponse)
