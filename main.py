@@ -17,7 +17,7 @@ def test():
 async def read_item(request: Request):
     bgimg = os.listdir("static/images/background")
     bgimg = bgimg[random.randint(0,len(bgimg)-1)]
-    version = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
+    version = strsubprocess.check_output(["git", "rev-parse", "--short", "HEAD"], text=True)
     return templates.TemplateResponse("index.html", {"request": request, "bgimage": bgimg, "version": version})
 
 @app.post("/webhook")
