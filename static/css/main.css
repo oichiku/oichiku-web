@@ -105,7 +105,6 @@ body {
   width: 99.375%;
   width: -webkit-calc(100% - 2px);
   width: calc(100% - 2px);
-  position: static;
 }
 footer {
   padding: 1%;
