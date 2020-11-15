@@ -88,6 +88,10 @@ body {
   padding: 5%;
   background-color: var(--main-bg);
 }
+.sns {
+  width: 90%;
+  margin: auto;
+}
 footer {
   padding: 1%;
   background: rgba(0,0,0,0.5);
