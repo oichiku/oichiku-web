@@ -88,4 +88,8 @@ body {
   background-color: var(--main-bg);
   padding: 5%;
 }
-
+.copyright {
+  text-align: center;
+  font-size: 15%;
+}
+h
