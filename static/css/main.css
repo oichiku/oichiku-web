@@ -90,7 +90,7 @@ body {
 }
 .sns {
   width: 90%;
-  margin: auto;
+  margin: 0 auto;
   text-align: center;
 }
 .sns-block {
