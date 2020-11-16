@@ -22,7 +22,7 @@ async def read_item(request: Request):
 
 @app.post("/webhook")
 async def webhook():
-    res = subprocess.check_output("/root/bin/oichiku-deploy")
+    res = subprocess.check_output("/root/bin/oichiku-deploy", text=True)
     return res
 
 @app.get("/{path_param}", response_class=HTMLResponse)
