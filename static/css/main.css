@@ -126,7 +126,7 @@ body {
   transition: .5s
 }
 .twitter {
-  background: #FFF;
+  background: var(--main-bg);
   border: solid #1DA1F2;
   border-width: 0 2px 2px 2px;
   box-sizing: border-box;
