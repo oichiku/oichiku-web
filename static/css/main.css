@@ -106,7 +106,6 @@ a {
   display: inline-block;
   height: 50px;
   max-width: 540px;
-  min-width: 326px;
   width: 99.375%;
   width: -webkit-calc(100% - 2px);
   width: calc(100% - 2px);
@@ -136,7 +135,6 @@ a {
   border-radius: 0 0 7px 7px;
   margin: 0 auto;
   max-width: 540px;
-  min-width: 326px;
   padding: 0;
   width: 99.375%;
   width: -webkit-calc(100% - 2px);
@@ -149,7 +147,6 @@ a {
   display: inline-block;
   height: 50px;
   max-width: 540px;
-  min-width: 326px;
   width: 99.375%;
   width: -webkit-calc(100% - 2px);
   width: calc(100% - 2px);
