@@ -20,7 +20,7 @@ async def read_item(request: Request):
     version = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"], text=True)
     return templates.TemplateResponse("index.html", {"request": request, "bgimage": bgimg, "version": version})
 
-@app.post("/webhook")
+@app.post("/webhook", response_class=HTMLResponse)
 async def webhook():
     res = subprocess.check_output("/root/bin/oichiku-deploy", text=True)
     return res
