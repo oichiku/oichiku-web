@@ -18,6 +18,9 @@ body {
   background-color: var(--main-bg);
   font-family: sans-serif;
 }
+a {
+    text-decoration: none;
+}
 .headerbg {
   background-color: #ffffff;
   position: fixed;
@@ -190,6 +193,15 @@ footer {
   padding: 1%;
   background: rgba(0,0,0,0.5);
   color: white;
+}
+.links {
+  text-align: center;
+  width: 100%;
+}
+.links .fab {
+  font-size: 8vw;
+  color: white;
+  margin: 0 3%;
 }
 .copyright {
   text-align: center;
