@@ -19,7 +19,12 @@ body {
   font-family: sans-serif;
 }
 a {
-    text-decoration: none;
+  text-decoration: none;
+}
+hr {
+  height: 1px;
+  background-color: white;
+  border: none;
 }
 .headerbg {
   background-color: #ffffff;
