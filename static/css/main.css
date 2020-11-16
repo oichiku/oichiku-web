@@ -20,7 +20,6 @@ body {
 }
 a {
   text-decoration: none;
-  color: white;
 }
 hr {
   height: 1px;
@@ -216,4 +215,7 @@ footer {
 .copyright {
   text-align: center;
   font-size: 10px;
+}
+.designedBy {
+  color: white;
 }
