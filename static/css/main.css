@@ -77,12 +77,14 @@ body {
   bottom: 5vh;
   -webkit-filter: drop-shadow(0 0 2px rgba(0, 0, 0, .5));
 }
-.contents {
+.movable {
   position: absolute;
   z-index: 10;
   -webkit-transform: translate3d(0, 0, 10px);
   transform: translate3d(0, 0, 10px);
   width: 100vw;
+}
+.contents {
   background-color: var(--main-bg);
 }
 .message {
