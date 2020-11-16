@@ -27,6 +27,12 @@ hr {
   background-color: white;
   border: none;
 }
+h1 {
+  border: solid var(--ui-color);
+  border-width: 0 0 3px 12px;
+  border-radius: 2vw 0 0 2vw;
+  padding: 0 3vw;
+}
 .headerbg {
   background-color: #ffffff;
   position: fixed;
