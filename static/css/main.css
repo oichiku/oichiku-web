@@ -32,6 +32,7 @@ h1 {
   border-width: 0 0 3px 12px;
   border-radius: 2vw 0 0 2vw;
   padding: 0 3vw;
+  text-align: left;
 }
 .headerbg {
   background-color: #ffffff;
