@@ -28,8 +28,8 @@ hr {
 }
 h1 {
   border: solid var(--ui-color);
-  border-width: 0 0 3px 3vw;
-  border-radius: 2vw 0 0 2vw;
+  border-width: 0 0 3px 12px;
+  border-radius: 7px 0 0 7px;
   padding: 0 3vw;
   text-align: left;
 }
