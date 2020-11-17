@@ -103,27 +103,6 @@ header {
 #menu-checkbox:checked+label+.menu {
     left: 0;
 }
-.headerbg {
-    background-color: #ffffff;
-    position: fixed;
-    z-index: 20;
-    -webkit-transform: translate3d(0, 0, 20px);
-    transform: translate3d(0, 0, 20px);
-    width: 100vw;
-    height: 7vh;
-    opacity: 0;
-}
-.headerimg {
-    height: 7vh;
-    min-height: 60px;
-    position: fixed;
-    z-index: 30;
-    -webkit-transform: translate3d(0, 0, 30px);
-    transform: translate3d(0, 0, 30px);
-    left: 3vw;
-    top: 3vw;
-    display: none;
-}
 .background {
     width: 100vw;
     height: 100vh;
@@ -147,6 +126,7 @@ header {
     z-index: 5;
     -webkit-transform: translate3d(0, 10vh, 5px);
     transform: translate3d(0, 10vh, 5px);
+    top: 30px;
 }
 .oideyoimg {
     height: 60vh;
