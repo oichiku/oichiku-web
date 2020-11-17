@@ -95,8 +95,8 @@ header {
     left: -100%;
     transition: left 0.7s;
 }
-.menu>li {
-    border-bottom: 1px solid var(--main-bg);
+.menu a li {
+    border-bottom: 1px solid #f4f4f4;
     padding: 10px 0;
     list-style: none;
 }
