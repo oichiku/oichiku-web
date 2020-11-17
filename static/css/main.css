@@ -1,16 +1,12 @@
 :root {
     --main-text: #242424;
     --main-bg: #f4f4f4;
-    --menu-text: #f4f4f4;
-    --menu-bg: #242424;
     --ui-color: #ffbb99;
 }
 @media (prefers-color-scheme: dark) {
     :root {
         --main-text: #f4f4f4;
         --main-bg: #242424;
-        --menu-text: #f4f4f4;
-        --menu-bg: #242436;
         --ui-color: #ff9ee2;
         transition: .5s;
     }
@@ -92,8 +88,8 @@ header {
     box-sizing: border-box;
     width: 100%;
     height: 100vh;
-    background: var(--menu-bg);
-    color: var(--menu-text);
+    background: #242436;
+    color: #f4f4f4;
     padding: 60px 20px;
     top: 0;
     left: -100%;
