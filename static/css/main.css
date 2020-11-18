@@ -51,6 +51,9 @@ body noscript {
     background: rgba(0,0,0,0.5);
     position: fixed;
     bottom: 0px;
+    z-index: 35;
+    -webkit-transform: translate3d(0, 0, 35px);
+    transform: translate3d(0, 0, 35px);
 }
 .mask {
     background: var(--main-bg);
