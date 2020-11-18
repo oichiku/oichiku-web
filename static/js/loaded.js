@@ -1,6 +1,6 @@
 $(window).on('load', function(){
     setTimeout(function(){
-        $('.mask').fadeOut();
+        $('.mask').fadeOut(500);
         $('body').css('overflow', 'scroll');
-    }, 1000);
+    }, 500);
 });
