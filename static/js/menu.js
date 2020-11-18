@@ -5,7 +5,7 @@ $(function() {
             $('body').css('overflow', 'hidden');
         } else {
             $('.menu-button').removeClass('is-active');
-            $('body').css('overflow', '');
+            $('body').css('overflow', 'scroll');
         }
     });
 });

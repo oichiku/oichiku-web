@@ -79,12 +79,21 @@ header {
     width: 34px;
     height: 4px;
     background: #fff;
-    -webkit-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.7s ease-out;
     transition: all 0.7s ease-out;
+    border: 0.5px;
+    border-style: solid;
+    border-color: #000;
+}
+.backgroundOn .menuline {
+    border-color: rgba(0,0,0,0);
 }
 .line_01 { top: 15px; }
 .line_02 { top: 28px; }
 .line_03 { top: 41px; }
+.is-active .menuline {
+    border-color: rgba(0,0,0,0);
+}
 .is-active .line_01 {
   top: 28px;
   -webkit-transform: rotate(45deg);
