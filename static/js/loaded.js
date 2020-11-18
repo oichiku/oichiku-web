@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).load(function(){
     $('.mask').hide()
     $('body').css('overflow', 'scroll')
 });
