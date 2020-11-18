@@ -55,13 +55,6 @@ header {
     transform: translate3d(0, 0, 35px);
     text-align: center;
 }
-.mask img {
-    position: fixed;
-    top: calc(50% - 18px);
-    left: calc(50% - 18px);
-    width: 36px;
-    height: 36px;
-}
 .backgroundOn {
     background: rgba(0,0,0,0.5);
 }
