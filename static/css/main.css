@@ -12,8 +12,12 @@
     }
 }
 
+html {
+    height: 100%;
+}
 body {
     margin: 0px;
+    height: 100%;
     color: var(--main-text);
     background-color: var(--main-bg);
     font-family: sans-serif;
@@ -150,10 +154,6 @@ body noscript {
     -webkit-transform: translate3d(0, 0, 0px);
     transform: translate3d(0, 0, 0px);
 }
-.blank {
-    opacity: 0;
-    height: 100vh;
-}
 .oideyo {
     height: 60vh;
     width: 100vw;
@@ -168,23 +168,35 @@ body noscript {
     height: 60vh;
     padding: 20px;
 }
-.pullup {
-    width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.pullup-icon {
-    width: 100px;
-    position: fixed;
-    bottom: 5vh;
-    -webkit-filter: drop-shadow(0 0 2px rgba(0, 0, 0, .5));
-}
 .movable {
+    top: calc(100% - 70px);
     position: absolute;
     z-index: 10;
     -webkit-transform: translate3d(0, 0, 10px);
     transform: translate3d(0, 0, 10px);
     width: 100vw;
+}
+.scroll {
+    width: 50px;
+    height: 50px;
+    margin: 10px 0;
+    transform: translate(calc(50vw - 25px), 0);
+    -webkit-transform: translate(calc(50vw - 25px), 0);
+    filter: drop-shadow(1px 1px 2px rgb(0, 0, 0));
+}
+.scroll span {
+    display: block;
+    width: 28.2842712474619px;
+    height: 1px;
+    background-color: #fff;
+}
+.scroll_01 {
+    transform: translate(0, 25px) rotate(45deg);
+    -webkit-transform: translate(0, 25px) rotate(45deg);
+}
+.scroll_02 {
+    transform: translate(20px, 25px) rotate(315deg);
+    -webkit-transform: translate(20px, 25px) rotate(315deg);
 }
 .contents {
     background-color: var(--main-bg);
