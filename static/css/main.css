@@ -167,7 +167,7 @@ header {
     text-align: center;
 }
 .twitter_btn {
-    color: #FFF;
+    color: #ffffff;
     border-radius: 7px 7px 0 0;
     position: relative;
     display: inline-block;
@@ -179,7 +179,7 @@ header {
     text-align: center;
     font-size: 1.5em;
     line-height: 50px;
-    background: #1DA1F2;
+    background: var(--ui-color);
     text-decoration:none;
 }
 
@@ -196,7 +196,7 @@ header {
 }
 .twitter {
     background: var(--main-bg);
-    border: solid #1DA1F2;
+    border: solid var(--ui-color);
     border-width: 0 2px 2px 2px;
     box-sizing: border-box;
     border-radius: 0 0 7px 7px;
@@ -207,6 +207,8 @@ header {
     width: -webkit-calc(100% - 2px);
     width: calc(100% - 2px);
 }
+
+/*
 .insta_btn {
     color: #FFF;
     border-radius: 7px;
@@ -220,8 +222,7 @@ header {
     text-align: center;
     font-size: 1.5em;
     line-height: 50px;
-    background: -webkit-linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
-    background: linear-gradient(135deg, #427eff 0%, #f13f79 70%) no-repeat;
+    background: var(--ui-color);
     overflow: hidden;
     text-decoration:none;
 }
@@ -253,6 +254,7 @@ header {
     top: -5px;
     right: -5px;
 }
+*/
 footer {
     padding: 1%;
     background: rgba(0,0,0,0.5);
