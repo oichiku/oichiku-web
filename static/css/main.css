@@ -83,10 +83,7 @@ header {
     transition: all 0.7s ease-out;
     border: 0.5px;
     border-style: solid;
-    border-color: #000;
-}
-.backgroundOn .menuline {
-    border-color: rgba(0,0,0,0);
+    border-color: rgba(0,0,0,0.5);
 }
 .line_01 { top: 15px; }
 .line_02 { top: 28px; }
