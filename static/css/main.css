@@ -84,7 +84,7 @@ header {
   transform: rotate(135deg);
 }
 .menu {
-    position: fixed;
+    position: absolute;
     box-sizing: border-box;
     width: 100%;
     height: 100vh;
@@ -94,11 +94,16 @@ header {
     top: 0;
     left: -100%;
     transition: left 0.7s;
+    overflow: scroll;
 }
 .menu a li {
     border-bottom: 1px solid #f4f4f4;
     padding: 10px 0;
     list-style: none;
+}
+.menu .twitter-in-menu {
+    border: 1px solid #f4f4f4;
+    margin: 30px auto;
 }
 #menu-checkbox:checked+label+.menu {
     left: 0;
