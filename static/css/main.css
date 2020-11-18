@@ -44,8 +44,13 @@ header {
     background: rgba(0,0,0,0);
     transition: all 300ms 0s ease;
 }
-header noscript {
+body noscript {
     width: 100%;
+    height: 60px;
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    position: fixed;
+    bottom: 0px;
 }
 .mask {
     background: var(--main-bg);
