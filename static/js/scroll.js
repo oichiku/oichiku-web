@@ -7,8 +7,8 @@ $(window).scroll(function() {
     }
 
     if ($(window).scrollTop() > $(window).height()) {
-        $('header').addClass('backgroundOn')
+        $('header').addClass('backgroundOn');
     } else {
-        $('header').removeClass('backgroundOn')
+        $('header').removeClass('backgroundOn');
     }
 })

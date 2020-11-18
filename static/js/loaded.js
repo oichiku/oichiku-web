@@ -1,4 +1,6 @@
-$(document).load(function(){
-    $('.mask').hide()
-    $('body').css('overflow', 'scroll')
+$(window).on('load', function(){
+    setTimeout(function(){
+        $('.mask').fadeOut();
+        $('body').css('overflow', 'scroll');
+    }, 1000);
 });
