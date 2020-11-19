@@ -1,0 +1,144 @@
+.background {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 0;
+    -webkit-transform: translate3d(0, 0, 0px);
+    transform: translate3d(0, 0, 0px);
+}
+.oideyo {
+    height: 60vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 5;
+    text-align: center;
+    -webkit-transform: translate3d(0, 0, 5px);
+    transform: translate3d(0, 0, 5px);
+    top: 60px;
+}
+.oideyoimg {
+    height: 60vh;
+    padding: 20px;
+}
+.movable {
+    top: calc(100% - 90px);
+    position: absolute;
+    z-index: 10;
+    -webkit-transform: translate3d(0, 0, 10px);
+    transform: translate3d(0, 0, 10px);
+    width: 100vw;
+}
+.scroll {
+    width: 50px;
+    height: 50px;
+    margin: 20px 0;
+    border: solid #fff;
+    border-width: 0 1px 1px 0;
+    transform: translate(calc(50vw - 25px), 0) rotate(45deg);
+    -webkit-transform: translate(calc(50vw - 25px), 0) rotate(45deg);
+    filter: drop-shadow(1px 1px 2px rgb(0, 0, 0));
+}
+.contents {
+    background-color: var(--main-bg);
+}
+.message {
+    padding: 5%;
+}
+.sns {
+    width: 90%;
+    margin: 0 auto;
+    padding: 5%;
+    text-align: center;
+}
+.twitter_btn {
+    color: #ffffff;
+    border-radius: 7px 7px 0 0;
+    position: relative;
+    display: inline-block;
+    height: 50px;
+    max-width: 540px;
+    width: 99.375%;
+    width: -webkit-calc(100% - 2px);
+    width: calc(100% - 2px);
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 50px;
+    background: var(--ui-color);
+    text-decoration:none;
+}
+
+.twitter_btn .fa-twitter {
+    font-size: 35px;
+    position: relative;
+    top: 4px;
+}
+
+.twitter_btn span {
+    display:inline-block;
+    position: relative;
+    transition: .5s
+}
+.twitter {
+    background: var(--main-bg);
+    border: solid var(--ui-color);
+    border-width: 0 2px 2px 2px;
+    box-sizing: border-box;
+    border-radius: 0 0 7px 7px;
+    margin: 0 auto;
+    max-width: 540px;
+    padding: 0;
+    width: 99.375%;
+    width: -webkit-calc(100% - 2px);
+    width: calc(100% - 2px);
+}
+
+/*
+.insta_btn {
+    color: #FFF;
+    border-radius: 7px;
+    position: relative;
+    display: inline-block;
+    height: 50px;
+    max-width: 540px;
+    width: 99.375%;
+    width: -webkit-calc(100% - 2px);
+    width: calc(100% - 2px);
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 50px;
+    background: var(--ui-color);
+    overflow: hidden;
+    text-decoration:none;
+}
+
+.insta_btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: -webkit-linear-gradient(15deg, #ffdb2c, rgb(249, 118, 76) 25%, rgba(255, 77, 64, 0) 50%) no-repeat;
+    background: linear-gradient(15deg, #ffdb2c, rgb(249, 118, 76) 25%, rgba(255, 77, 64, 0) 50%) no-repeat;
+}
+
+.insta_btn .fa-instagram {
+    font-size: 35px;
+    position: relative;
+    top: 4px;
+}
+
+.insta_btn span {
+    display:inline-block;
+    position: relative;
+}
+.insta_btn .fa-external-link-alt {
+    font-size: 15px;
+    position: relative;
+    top: -5px;
+    right: -5px;
+}
+*/
