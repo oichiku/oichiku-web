@@ -309,9 +309,9 @@ footer {
     width: 100%;
 }
 .links .fab {
-    font-size: 8vw;
+    font-size: 30px;
     color: white;
-    margin: 0 3%;
+    margin: 0 5px;
 }
 .copyright {
     text-align: center;
