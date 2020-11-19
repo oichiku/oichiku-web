@@ -32,10 +32,8 @@ hr {
     border: none;
 }
 h1 {
-    border: solid var(--ui-color);
-    border-width: 0 0 3px 12px;
-    border-radius: 7px 0 0 7px;
-    padding: 0 3vw;
+    border: solid #dcdcdc;
+    border-width: 0 0 2px 0;
     text-align: left;
 }
 header {
