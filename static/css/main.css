@@ -213,6 +213,7 @@ footer {
 .fomenu {
     list-style: none;
     text-align: center;
+    font-size: 15px;
 }
 .fomenu a li {
     padding-top: 10px;
