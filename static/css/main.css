@@ -56,6 +56,7 @@ body noscript {
     z-index: 35;
     -webkit-transform: translate3d(0, 0, 35px);
     transform: translate3d(0, 0, 35px);
+    overflow: hidden;
 }
 .mask {
     background: var(--main-bg);
