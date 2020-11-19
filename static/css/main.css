@@ -210,6 +210,13 @@ footer {
     background: rgba(0,0,0,0.5);
     color: white;
 }
+.fomenu {
+    list-style: none;
+    text-align: center;
+}
+.fomenu a li {
+    padding-top: 10px;
+}
 .links {
     text-align: center;
     width: 100%;
