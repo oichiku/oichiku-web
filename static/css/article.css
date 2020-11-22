@@ -3,7 +3,6 @@ header {
 }
 noarticle {
     display: block;
-    height: calc(100vh - 60px);
 }
 .movable {
     width: 100%;
@@ -11,7 +10,9 @@ noarticle {
     top: 60px;
 }
 .content {
-    width: 100%;
+    width: calc(100% - 40px);
     max-width: 500px;
+    min-height: 100vh;
     margin: 0 auto;
+    padding: 0 20px;
 }
