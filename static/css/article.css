@@ -16,3 +16,9 @@ noarticle {
     margin: 0 auto;
     padding: 0 20px;
 }
+.title {
+    width: 100%;
+    font-size: 60px;
+    font-weight: 900;
+    border: 1px solid #555;
+}
