@@ -7,6 +7,7 @@ import subprocess, os, random
 app = FastAPI(docs_url=None, redoc_url=None)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/bg", StaticFiles(directory="../admin/background"), name="background")
 
 templates = Jinja2Templates(directory="templates")
 
@@ -15,7 +16,7 @@ def test():
 
 @app.get("/", response_class=HTMLResponse)
 async def read_item(request: Request):
-    bgimg = os.listdir("static/images/background")
+    bgimg = os.listdir("../admin/background")
     bgimg = bgimg[random.randint(0,len(bgimg)-1)]
     version = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"], text=True)
     return templates.TemplateResponse("index.html", {"request": request, "bgimage": bgimg, "version": version})
