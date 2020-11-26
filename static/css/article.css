@@ -11,7 +11,7 @@ noarticle {
 }
 .content {
     width: calc(100% - 40px);
-    max-width: 500px;
+    max-width: 750px;
     min-height: 100vh;
     margin: 0 auto;
     padding: 20px;
