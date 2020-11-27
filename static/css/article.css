@@ -8,6 +8,7 @@ noarticle {
     width: 100%;
     position: absolute;
     top: 60px;
+    background-color: #fff;
 }
 .content {
     width: calc(100% - 40px);
