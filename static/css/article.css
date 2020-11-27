@@ -8,7 +8,6 @@ noarticle {
     width: 100%;
     position: absolute;
     top: 60px;
-    background-color: #fff;
 }
 .content {
     width: calc(100% - 40px);
@@ -16,6 +15,7 @@ noarticle {
     min-height: 100vh;
     margin: 0 auto;
     padding: 20px;
+    background-color: #fff;
 }
 .title {
     width: 100%;
