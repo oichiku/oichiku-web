@@ -41,7 +41,7 @@ async def article(request: Request):
 @app.get("/article/view", response_class=HTMLResponse)
 async def article_view(request: Request, id: Optional[str] = None):
     csv = pd.read_csv("../admin/list.csv", encoding="utf_8", dtype=object)
-    csv = csv[csv.isenable == 1]
+    csv = csv[csv.isenable == "1"]
     if (csv.id == id).sum() == 0:
         return templates.TemplateResponse("404.html", {"request": request})
     bgimg = os.listdir("../admin/background")
