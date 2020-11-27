@@ -24,6 +24,7 @@ noarticle {
     border: 1px solid #555;
 }
 right {
+    display: block;
     width: 100%;
     text-align: right;
     color: #555;
