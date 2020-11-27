@@ -21,7 +21,10 @@ noarticle {
     width: 100%;
     font-size: 30px;
     font-weight: 900;
-    border: 1px solid #555;
+    padding: 0;
+}
+.title:after {
+    content: '<hr color="#555">';
 }
 right {
     display: block;
