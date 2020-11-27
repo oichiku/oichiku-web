@@ -22,6 +22,7 @@ noarticle {
     font-size: 30px;
     font-weight: 900;
     padding: 0;
+    background-color: var(--ui-color);
 }
 right {
     display: block;
