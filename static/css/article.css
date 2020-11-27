@@ -19,6 +19,9 @@ noarticle {
 }
 .title {
     width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    padding: 20px;
     font-size: 30px;
     font-weight: 900;
     color: #555;
