@@ -23,9 +23,6 @@ noarticle {
     font-weight: 900;
     padding: 0;
 }
-.title:after {
-    content: '<hr color="#555">';
-}
 right {
     display: block;
     width: 100%;
