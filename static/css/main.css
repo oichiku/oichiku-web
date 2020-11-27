@@ -205,6 +205,17 @@ body noscript {
 #menu-checkbox:checked+label+.menu {
     left: 0;
 }
+.background {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 0;
+    -webkit-transform: translate3d(0, 0, 0px);
+    transform: translate3d(0, 0, 0px);
+}
 footer {
     padding: 1%;
     background: rgba(0,0,0,0.5);
