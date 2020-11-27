@@ -15,7 +15,7 @@ noarticle {
     min-height: 100vh;
     margin: 0 auto;
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--main-bg);
 }
 .title {
     width: 100%;
