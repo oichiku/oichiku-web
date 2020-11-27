@@ -23,3 +23,8 @@ noarticle {
     font-weight: 900;
     border: 1px solid #555;
 }
+right {
+    text-align: right;
+    color: #555;
+    font-size: 20px;
+}

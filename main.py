@@ -16,8 +16,8 @@ app.mount("/bg", StaticFiles(directory="../admin/background"), name="background"
 templates = Jinja2Templates(directory="templates")
 
 
-def test():
-    return "Hello World!"
+def opdate(date):
+    return date[:4] + "/" + date[4:6] + "/" + date[6:8]
 
 
 @app.get("/", response_class=HTMLResponse)
@@ -52,7 +52,9 @@ async def article_view(request: Request, id: Optional[str] = None):
         content = f.read()
     content = "<style>noarticle{display:none;}server{display:inline;}</style>\n" + content
     title = csv.title[csv.id == id].iloc[-1]
-    return templates.TemplateResponse("article-view.html", {"request": request, "bgimage": bgimg, "version": version, "title": title, "content": content})
+    created = csv.created[csv.id == id].iloc[-1]
+    created = opdate(created)
+    return templates.TemplateResponse("article-view.html", {"request": request, "bgimage": bgimg, "version": version, "title": title, "created": created, "content": content})
 
 
 @app.post("/webhook", response_class=HTMLResponse)
