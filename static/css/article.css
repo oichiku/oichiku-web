@@ -18,7 +18,7 @@ noarticle {
     background-color: var(--main-bg);
 }
 .title {
-    width: 100%;
+    width: calc(100% - 40px);
     max-width: 750px;
     margin: 0 auto;
     padding: 20px;
