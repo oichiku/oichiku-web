@@ -11,6 +11,9 @@
 .oideyoimg {
     height: 60vh;
     padding: 20px;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 .movable {
     top: calc(100% - 90px);
