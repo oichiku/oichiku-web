@@ -3,7 +3,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from typing import Optional
-# import pandas as pd
+import pandas as pd
 import subprocess
 import os
 import random
@@ -62,5 +62,5 @@ async def article_view(request: Request, id: Optional[str] = None):
 
 @app.post("/webhook", response_class=HTMLResponse)
 async def webhook():
-    res = subprocess.check_output("cd /var/www/oichiku-web; git pull origin master; cd -", text=True)
+    res = subprocess.check_output("cd /var/www/oichiku-web; git pull origin master; cd -", text=True, shell=True)
     return res
