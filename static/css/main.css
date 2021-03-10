@@ -1,25 +1,11 @@
-:root {
-    --main-text: #242424;
-    --main-bg: #f4f4f4;
-    --ui-color: #ffbb99;
-}
-@media (prefers-color-scheme: dark) {
-    :root {
-        --main-text: #f4f4f4;
-        --main-bg: #242424;
-        --ui-color: #ff9ee2;
-        transition: .5s;
-    }
-}
-
 html {
     height: 100%;
 }
 body {
     margin: 0px;
     height: 100%;
-    color: var(--main-text);
-    background-color: var(--main-bg);
+    color: #333333;
+    background-color: #f4f5f7;
     font-family: sans-serif;
     overflow: hidden;
 }
@@ -37,15 +23,26 @@ h1 {
     border-width: 0 0 2px 0;
     text-align: left;
 }
-header {
-    position: fixed;
+.headerbg {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #333333;
+    z-index: 15;
+    -webkit-transform: translate3d(0, 0, 15px);
+    transform: translate3d(0, 0, 15px);
+}
+.sitename {
+    color: #f4f5f7;
+    font-size: 30px;
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.8));
+    position: absolute;
+    top: 20px;
+    left: 20px;
     z-index: 20;
     -webkit-transform: translate3d(0, 0, 20px);
     transform: translate3d(0, 0, 20px);
-    width: 100%;
-    height: 60px;
-    background: rgba(0,0,0,0);
-    transition: all 300ms 0s ease;
 }
 body noscript {
     width: 100%;
@@ -59,7 +56,7 @@ body noscript {
     transform: translate3d(0, 0, 35px);
 }
 .mask {
-    background: var(--main-bg);
+    background: #f4f5f7;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -99,7 +96,7 @@ body noscript {
   content: '';
 }
 .spinner:after {
-  background: var(--main-bg);
+  background: #f4f5f7;
   width: 75%;
   height: 75%;
   border-radius: 50%;
@@ -131,44 +128,39 @@ body noscript {
     transform: rotate(360deg);
   }
 }
-.backgroundOn {
-    background: rgba(0,0,0,0.5);
-}
 #menu-checkbox {
     display: none;
 }
 .menu-button {
+    background-color: #fab27b;
+    filter: drop-shadow(2px 2px 2px rgba(0,0,0,0.8));
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
     position: absolute;
-    right: 0;
-    top: 0;
-    padding: 10px;
+    right: 15px;
+    top: 20px;
     display: inline-block;
-    z-index: 30;
-    -webkit-transform: translate3d(0, 0, 30px);
-    transform: translate3d(0, 0, 30px);
+    z-index: 20;
+    -webkit-transform: translate3d(0, 0, 20px);
+    transform: translate3d(0, 0, 20px);
 }
 .menuline {
-    position: fixed;
+    position: absolute;
     top: 0;
     right: 15px;
     display: block;
-    width: 34px;
-    height: 4px;
+    width: 20px;
+    height: 2px;
     background: #fff;
     -webkit-transition: all 0.7s ease-out;
     transition: all 0.7s ease-out;
-    border: 0.5px;
-    border-style: solid;
-    border-color: rgba(0,0,0,0.5);
 }
 .line_01 { top: 15px; }
-.line_02 { top: 28px; }
-.line_03 { top: 41px; }
-.is-active .menuline {
-    border-color: rgba(0,0,0,0);
-}
+.line_02 { top: 24px; }
+.line_03 { top: 33px; }
 .is-active .line_01 {
-  top: 28px;
+  top: 24px;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
@@ -176,7 +168,7 @@ body noscript {
   opacity: 0;
 }
 .is-active .line_03 {
-  top: 28px;
+  top: 24px;
   -webkit-transform: rotate(135deg);
   transform: rotate(135deg);
 }
@@ -184,42 +176,26 @@ body noscript {
     position: absolute;
     box-sizing: border-box;
     width: 100%;
-    height: 100vh;
-    background: #242436;
-    color: #f4f4f4;
+    height: 350px;
+    background: #333333;
+    color: #f4f5f7;
     padding: 60px 20px;
-    top: 0;
-    left: -100%;
-    transition: left 0.7s;
-    overflow: scroll;
+    top: -260px;
+    left: 0;
+    transition: all 0.7s;
 }
 .menu a li {
     border-bottom: 1px solid #f4f4f4;
     padding: 10px 0;
     list-style: none;
 }
-.menu .twitter-in-menu {
-    border: 1px solid #f4f4f4;
-    margin: 30px auto;
-}
 #menu-checkbox:checked+label+.menu {
-    left: 0;
-}
-.background {
-    width: 100vw;
-    height: 100vh;
-    position: fixed;
-    background-position: center center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: 0;
-    -webkit-transform: translate3d(0, 0, 0px);
-    transform: translate3d(0, 0, 0px);
+    top: 90px;
 }
 footer {
     padding: 1%;
-    background: rgba(0,0,0,0.5);
-    color: white;
+    background: #333333;
+    color: #f4f5f7;
 }
 .fomenu {
     list-style: none;
