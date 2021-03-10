@@ -3,7 +3,7 @@ from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from typing import Optional
-import pandas as pd
+# import pandas as pd
 import subprocess
 import os
 import random
@@ -26,7 +26,10 @@ async def index(request: Request):
     bgimg = bgimg[random.randint(0, len(bgimg) - 1)]
     version = subprocess.check_output(
         ["git", "rev-parse", "--short", "HEAD"], text=True)
-    return templates.TemplateResponse("index.html", {"request": request, "bgimage": bgimg, "version": version})
+    header = templates.get_template('header.html').render({"version": version})
+    index_html = templates.get_template('index.html').render({"version": version, "bgimage": bgimg})
+    footer = templates.get_template('footer.html').render({"version": version})
+    return header + index_html + footer
 
 
 @app.get("/article", response_class=HTMLResponse)
