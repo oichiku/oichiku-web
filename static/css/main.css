@@ -180,7 +180,7 @@ body noscript {
     height: 350px;
     background: #333333;
     color: #f4f5f7;
-    padding: 60px 20px;
+    padding: 90px 20px;
     top: -260px;
     left: 0;
     transition: all 0.7s;
@@ -191,7 +191,7 @@ body noscript {
     list-style: none;
 }
 #menu-checkbox:checked+label+.menu {
-    top: 90px;
+    top: 0;
 }
 .contents {
     min-height: 100vh;
