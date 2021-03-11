@@ -48,7 +48,8 @@ h1 {
 body noscript {
     width: 100%;
     height: 60px;
-    color: #fff;
+    text-align: center;
+    color: #f4f5f7;
     background: rgba(0,0,0,0.5);
     position: fixed;
     bottom: 0px;
