@@ -8,6 +8,7 @@ body {
     background-color: #f4f5f7;
     font-family: sans-serif;
     overflow: hidden;
+    position: relative;
 }
 a {
     text-decoration: none;
@@ -191,6 +192,9 @@ body noscript {
 }
 #menu-checkbox:checked+label+.menu {
     top: 90px;
+}
+.contents {
+    min-height: 100vh;
 }
 footer {
     padding: 1%;
