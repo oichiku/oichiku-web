@@ -155,8 +155,8 @@ body noscript {
     width: 20px;
     height: 2px;
     background: #fff;
-    -webkit-transition: all 0.7s ease-out;
-    transition: all 0.7s ease-out;
+    -webkit-transition: top 0.7s ease-out, transform 0.7s ease-out, opacity 0.7s ease-out;
+    transition: top 0.7s ease-out, transform 0.7s ease-out, opacity 0.7s ease-out;
 }
 .line_01 { top: 15px; }
 .line_02 { top: 24px; }
