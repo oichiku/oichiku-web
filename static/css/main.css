@@ -159,15 +159,15 @@ body noscript {
 .line_01 { top: 15px; }
 .line_02 { top: 24px; }
 .line_03 { top: 33px; }
-.is-active .line_01 {
+#menu-checkbox:checked+label>.menu-button>.line_01 {
   top: 24px;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-.is-active .line_02 {
+#menu-checkbox:checked+label>.menu-button>.line_02 {
   opacity: 0;
 }
-.is-active .line_03 {
+#menu-checkbox:checked+label>.menu-button>.line_03 {
   top: 24px;
   -webkit-transform: rotate(135deg);
   transform: rotate(135deg);
