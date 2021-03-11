@@ -33,5 +33,5 @@ async def index(request: Request):
 
 @app.post("/webhook", response_class=HTMLResponse)
 async def webhook():
-    res = subprocess.check_output("cd /var/www/oichiku-web; git pull origin master; cd -", text=True, shell=True)
+    res = subprocess.run("/usr/share/oichiku/bin/update")
     return res
