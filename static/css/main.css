@@ -197,7 +197,7 @@ body noscript {
     min-height: 100vh;
 }
 footer {
-    padding: 1%;
+    padding: 10px;
     background: #333333;
     color: #f4f5f7;
 }
