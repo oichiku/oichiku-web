@@ -1,6 +1,9 @@
 .contents {
     background-color: var(--main-bg);
 }
+.topimg {
+    width: 100vw;
+}
 .message {
     padding: 5%;
 }

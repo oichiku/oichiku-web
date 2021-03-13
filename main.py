@@ -26,7 +26,7 @@ async def index(request: Request):
     version = subprocess.check_output(
         ["git", "rev-parse", "--short", "HEAD"], text=True)
     header = templates.get_template('header.html').render({"version": version})
-    index_html = templates.get_template('top.html').render({"version": version, "bgimage": bgimg})
+    index_html = templates.get_template('top.html').render({"version": version, "bgimg": bgimg})
     footer = templates.get_template('footer.html').render({"version": version})
     return header + index_html + footer
 
