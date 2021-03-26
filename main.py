@@ -1,23 +1,16 @@
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse
+from fastapi.responses import HTMLResponse, PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from starlette.exceptions import HTTPException as StarletteHTTPException
 from typing import Optional
 import subprocess
 import os
 import random
 
-
 templates = Jinja2Templates(directory="templates")
 
-async def not_found(request, exc):
-    return templates.get_template('404.html')
-
-exceptions = {
-    404: not_found,
-}
-
-app = FastAPI(docs_url=None, redoc_url=None, exception_handlers=exceptions)
+app = FastAPI(docs_url=None, redoc_url=None)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount("/bg", StaticFiles(directory="/usr/share/oichiku/background"), name="background")
@@ -25,6 +18,11 @@ app.mount("/bg", StaticFiles(directory="/usr/share/oichiku/background"), name="b
 
 def opdate(date):
     return date[:4] + "/" + date[4:6] + "/" + date[6:8]
+
+
+@app.exception_handler(StarletteHTTPException)
+async def my_exception_handler(request, exception):
+    return PlainTextResponse(str(exception.detail), status_code = exception.status_code)
 
 
 @app.get("/", response_class=HTMLResponse)
