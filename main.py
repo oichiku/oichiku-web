@@ -8,6 +8,8 @@ import os
 import random
 
 
+templates = Jinja2Templates(directory="templates")
+
 async def not_found(request, exc):
     return templates.get_template('404.html')
 
@@ -19,8 +21,6 @@ app = FastAPI(docs_url=None, redoc_url=None, exception_handlers=exceptions)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 app.mount("/bg", StaticFiles(directory="/usr/share/oichiku/background"), name="background")
-
-templates = Jinja2Templates(directory="templates")
 
 
 def opdate(date):
