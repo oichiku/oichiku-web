@@ -22,7 +22,10 @@ def opdate(date):
 
 @app.exception_handler(StarletteHTTPException)
 async def my_exception_handler(request, exception):
-    return PlainTextResponse(str(exception.detail), status_code = exception.status_code)
+    if exception.status_code == 404:
+        return templates.get_template('404.html')
+    else:
+        return PlainTextResponse(str(exception.detail), status_code = exception.status_code)
 
 
 @app.get("/", response_class=HTMLResponse)
