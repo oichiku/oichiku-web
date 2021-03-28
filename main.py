@@ -29,8 +29,8 @@ async def my_exception_handler(request, exception):
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    version = subprocess.check_output(
-        ["git", "rev-parse", "--short", "HEAD"], text=True)
+    version = subprocess.run(
+        ["git rev-parse --short HEAD", text=True, shell=True)
     header = templates.get_template('header.html').render({"version": version})
     index_html = templates.get_template('top.html').render({"version": version})
     footer = templates.get_template('footer.html').render({"version": version})
