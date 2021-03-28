@@ -13,7 +13,6 @@ templates = Jinja2Templates(directory="templates")
 app = FastAPI(docs_url=None, redoc_url=None)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
-app.mount("/bg", StaticFiles(directory="/usr/share/oichiku/background"), name="background")
 
 
 def opdate(date):
@@ -30,17 +29,9 @@ async def my_exception_handler(request, exception):
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    bgimg = os.listdir("/usr/share/oichiku/background")
-    bgimg = bgimg[random.randint(0, len(bgimg) - 1)]
     version = subprocess.check_output(
         ["git", "rev-parse", "--short", "HEAD"], text=True)
     header = templates.get_template('header.html').render({"version": version})
-    index_html = templates.get_template('top.html').render({"version": version, "bgimg": bgimg})
+    index_html = templates.get_template('top.html').render({"version": version})
     footer = templates.get_template('footer.html').render({"version": version})
     return header + index_html + footer
-
-
-@app.post("/webhook", response_class=HTMLResponse)
-async def webhook():
-    res = subprocess.run("/usr/share/oichiku/bin/update")
-    return res
