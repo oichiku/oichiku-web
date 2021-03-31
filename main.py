@@ -1,8 +1,9 @@
 from fastapi import FastAPI, Request
-from fastapi.responses import HTMLResponse, PlainTextResponse
+from fastapi.responses import HTMLResponse, PlainTextResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.exceptions import HTTPException as StarletteHTTPException
+import os
 import subprocess
 
 templates = Jinja2Templates(directory="templates")
@@ -10,6 +11,16 @@ templates = Jinja2Templates(directory="templates")
 app = FastAPI(docs_url=None, redoc_url=None)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
+
+
+@app.middleware("http")
+async def add_process_time_header(request: Request, call_next):
+    if 'herokuapp' in str(request.url):
+        url = os.getenv('OICHIKU_URL', 'https://example.com/')
+        response = RedirectResponse(url)
+    else:
+        response = await call_next(request)
+    return response
 
 
 @app.exception_handler(StarletteHTTPException)
