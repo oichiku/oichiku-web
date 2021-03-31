@@ -3,6 +3,7 @@ from fastapi.responses import HTMLResponse, PlainTextResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.exceptions import HTTPException as StarletteHTTPException
+from urllib.parse import urlparse
 import os
 import subprocess
 
@@ -15,8 +16,9 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.middleware("http")
 async def add_process_time_header(request: Request, call_next):
-    if 'herokuapp' in str(request.url):
-        url = os.getenv('OICHIKU_URL', 'https://example.com/')
+    if 'herokuapp' in urlparse(str(request.url)).netloc:
+        domain = os.getenv('OICHIKU_DOMAIN', 'example.com')
+        url = '{uri.scheme}://{domain}{uri.path}?{uri.query}'.format(uri=urlparse(str(request.url)), domain=domain)
         response = RedirectResponse(url)
     else:
         response = await call_next(request)
