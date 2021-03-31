@@ -3,20 +3,13 @@ from fastapi.responses import HTMLResponse, PlainTextResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.exceptions import HTTPException as StarletteHTTPException
-from typing import Optional
 import subprocess
-import os
-import random
 
 templates = Jinja2Templates(directory="templates")
 
 app = FastAPI(docs_url=None, redoc_url=None)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
-
-
-def opdate(date):
-    return date[:4] + "/" + date[4:6] + "/" + date[6:8]
 
 
 @app.exception_handler(StarletteHTTPException)
