@@ -1,9 +1,8 @@
-from sqlalchemy import create_engine
-from sqlalchemy import Column, Integer, Text, DateTime
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
 import os
 
+from sqlalchemy import Column, DateTime, Integer, Text, create_engine
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker
 
 DB_URL = os.getenv("DATABASE_URL").replace("postgres://", "postgresql://", 1)
 ENGINE = create_engine(DB_URL)

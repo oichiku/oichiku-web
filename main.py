@@ -1,3 +1,7 @@
+import os
+import subprocess
+from urllib.parse import urlparse
+
 from fastapi import FastAPI, Request
 from fastapi.responses import (
     HTMLResponse,
@@ -8,9 +12,6 @@ from fastapi.responses import (
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from starlette.exceptions import HTTPException as StarletteHTTPException
-from urllib.parse import urlparse
-import os
-import subprocess
 
 templates = Jinja2Templates(directory="templates")
 
