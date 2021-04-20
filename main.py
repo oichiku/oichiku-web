@@ -1,4 +1,5 @@
 import os
+from subprocess import run, PIPE
 from urllib.parse import urlparse
 
 from fastapi import FastAPI, Request
@@ -50,10 +51,11 @@ async def my_exception_handler(request, exception):
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
     title, content, created_at, updated_at = mydb.get_post(0)
+    gitver = run('git rev-parse --short HEAD', shell=True, stdout=PIPE, text=True).stdout
+    version = gitver + '-' + str(updated_at)
     header = templates.get_template("header.html").render(
-        {"title": title, "version": updated_at}
+        {"title": title, "version": version}
     )
-    print(content)
     contentHTML = Template(content).render({"version": updated_at})
-    footer = templates.get_template("footer.html").render({"version": updated_at})
+    footer = templates.get_template("footer.html").render({"version": version})
     return header + contentHTML + footer
