@@ -196,6 +196,7 @@ body noscript {
 }
 .contents {
     min-height: 100vh;
+    padding-top: 90px;
 }
 footer {
     padding: 10px;
