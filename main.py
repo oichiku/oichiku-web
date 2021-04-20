@@ -1,5 +1,4 @@
 import os
-import subprocess
 from urllib.parse import urlparse
 
 from fastapi import FastAPI, Request
@@ -11,7 +10,9 @@ from fastapi.responses import (
 )
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+from jinja2 import Template
 from starlette.exceptions import HTTPException as StarletteHTTPException
+import mydb
 
 templates = Jinja2Templates(directory="templates")
 
@@ -48,8 +49,11 @@ async def my_exception_handler(request, exception):
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    version = subprocess.run("git rev-parse --short HEAD", shell=True)
-    header = templates.get_template("header.html").render({"version": version})
-    index_html = templates.get_template("top.html").render({"version": version})
-    footer = templates.get_template("footer.html").render({"version": version})
-    return header + index_html + footer
+    title, content, created_at, updated_at = mydb.get_post(0)
+    header = templates.get_template("header.html").render(
+        {"title": title, "version": updated_at}
+    )
+    print(content)
+    contentHTML = Template(content).render({"version": updated_at})
+    footer = templates.get_template("footer.html").render({"version": updated_at})
+    return header + contentHTML + footer
