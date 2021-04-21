@@ -50,7 +50,7 @@ async def my_exception_handler(request, exception):
 
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
-    title, content, created_at, updated_at = mydb.get_post(0)
+    author, title, content, created_at, updated_at = mydb.get_post(0)
     gitver = run('git rev-parse --short HEAD', shell=True, stdout=PIPE, text=True).stdout
     version = gitver + '-' + str(updated_at)
     header = templates.get_template("header.html").render(

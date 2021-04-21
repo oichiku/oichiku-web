@@ -12,6 +12,7 @@ Base = declarative_base()
 class Posts(Base):
     __tablename__ = "posts"
     id = Column(Integer, primary_key=True)
+    author = Column(Text)
     title = Column(Text)
     content = Column(Text)
     created_at = Column(DateTime)
@@ -24,9 +25,9 @@ session = Session()
 
 def get_post(id):
     x = session.query(Posts).get(id)
-    return x.title, x.content, x.created_at, x.updated_at
+    return x.author, x.title, x.content, x.created_at, x.updated_at
 
 
 if __name__ == "__main__":
-    title, content, created_at, updated_at = get_post(0)
-    print(title, content, created_at, updated_at)
+    author, title, content, created_at, updated_at = get_post(0)
+    print(author, title, content, created_at, updated_at)
