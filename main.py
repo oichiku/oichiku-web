@@ -1,8 +1,9 @@
 import os
+import secrets
 from subprocess import run, PIPE
 from urllib.parse import urlparse
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Cookie, Form, HTTPException
 from fastapi.responses import (
     HTMLResponse,
     PlainTextResponse,
@@ -12,6 +13,7 @@ from fastapi.responses import (
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 from jinja2 import Template
+from typing import Optional
 from starlette.exceptions import HTTPException as StarletteHTTPException
 import mydb
 
@@ -52,11 +54,39 @@ async def my_exception_handler(request, exception):
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
     author, title, content, created_at, updated_at = mydb.get_post(0)
-    gitver = run('git rev-parse --short HEAD', shell=True, stdout=PIPE, text=True).stdout
-    version = gitver + '-' + str(updated_at)
+    gitver = run(
+        "git rev-parse --short HEAD", shell=True, stdout=PIPE, text=True
+    ).stdout
+    version = gitver + "-" + str(updated_at)
     header = templates.get_template("header.html").render(
         {"title": title, "version": version}
     )
     contentHTML = Template(content).render({"version": updated_at})
     footer = templates.get_template("footer.html").render({"version": version})
     return header + contentHTML + footer
+
+
+@app.get("/admin", response_class=HTMLResponse)
+async def adminpage(sessid: Optional[str] = Cookie(None)):
+    if sessid:
+        db = mydb.get_session(sessid)
+        if db:
+            return db.user_id
+    res = '<form method="POST">\
+        <input name="user_id">\
+        <input name="password" type="password">\
+        <input type="submit">\
+        </form>'
+    return res
+
+
+@app.post("/admin")
+async def login(user_id: str = Form(...), password: str = Form(...)):
+    db = mydb.get_user(user_id)
+    if not db or password != db.password:
+        raise HTTPException(status_code=400, detail="Incorrect username or password")
+    sessid = secrets.token_hex(32)
+    mydb.set_session(sessid, user_id)
+    res = RedirectResponse("/admin", status_code=302)
+    res.set_cookie(key="sessid", value=sessid)
+    return res
