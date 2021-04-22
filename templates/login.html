@@ -3,13 +3,56 @@
 <head>
     <meta charset="utf-8" />
     <title>Login</title>
+    <style>
+        form {
+            width: 80vw;
+            margin: 0 auto;
+        }
+        input {
+            width: 100%;
+            height: 30px;
+            outline: none;
+            border: 1px solid #09c;
+            appearance: none;
+	        -webkit-appearance: none;
+	        -moz-appearance: none;
+        }
+        button {
+            background-color: transparent;
+            border: 1px solid #09c;
+            cursor: pointer;
+            outline: none;
+            margin: 10px 0;
+            height: 30px;
+            appearance: none;
+	        -webkit-appearance: none;
+	        -moz-appearance: none;
+        }
+    </style>
 </head>
 <body>
+    <h1 style="text-align: center;">管理画面ログイン</h1>
     <form method="POST">
-        <input name="user_id">
-        <input name="password" type="password">
-        <input name="redirect" type="hidden" value="{{ redirect }}">
-        <input type="submit">
+        ユーザーID:<br>
+        <input name="user_id"><br>
+        パスワード: <button id="togglePass">表示</button><br>
+        <input name="password" type="password"><br>
+        <input name="redirect" type="hidden" value="{{ redirect }}"><br>
+        <button type="submit" style="width: 100%;">送信</button>
     </form>
+    <script type="text/javascript">
+        passwordBox = document.getElementsByName('password')[0];
+        togglePass = document.getElementById('togglePass');
+        togglePass.addEventListener("click", (e)=>{
+            e.preventDefault();
+            if( passwordBox.type === 'password' ) {
+                passwordBox.type = 'text';
+                togglePass.textContent = '非表示';
+            } else {
+                passwordBox.type = 'password';
+                togglePass.textContent = '表示';
+            }
+        });
+    </script>
 </body>
 </html>
