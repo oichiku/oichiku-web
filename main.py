@@ -3,7 +3,7 @@ import secrets
 from subprocess import run, PIPE
 from urllib.parse import urlparse
 
-from fastapi import FastAPI, Request, Cookie, Form, HTTPException
+from fastapi import FastAPI, Request, Cookie, Form, HTTPException, Depends
 from fastapi.responses import (
     HTMLResponse,
     PlainTextResponse,
@@ -22,6 +22,18 @@ templates = Jinja2Templates(directory="templates")
 app = FastAPI(docs_url=None, redoc_url=None)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
+
+
+class RequiresLoginException(Exception):
+    pass
+
+
+async def auth(sessid: Optional[str] = Cookie(None)):
+    if sessid:
+        db = mydb.get_session(sessid)
+        if db:
+            return db.user_id
+    raise RequiresLoginException
 
 
 @app.middleware("http")
@@ -51,6 +63,11 @@ async def my_exception_handler(request, exception):
         )
 
 
+@app.exception_handler(RequiresLoginException)
+async def exception_handler(request: Request, exc: RequiresLoginException):
+    return RedirectResponse(url="/login?redirect=" + str(request.url))
+
+
 @app.get("/", response_class=HTMLResponse)
 async def index(request: Request):
     author, title, content, created_at, updated_at = mydb.get_post(0)
@@ -66,27 +83,28 @@ async def index(request: Request):
     return header + contentHTML + footer
 
 
-@app.get("/admin", response_class=HTMLResponse)
-async def adminpage(sessid: Optional[str] = Cookie(None)):
-    if sessid:
-        db = mydb.get_session(sessid)
-        if db:
-            return db.user_id
-    res = '<form method="POST">\
-        <input name="user_id">\
-        <input name="password" type="password">\
-        <input type="submit">\
-        </form>'
-    return res
+@app.get("/login", response_class=HTMLResponse)
+async def loginpage(redirect: Optional[str] = None):
+    html = templates.get_template("login.html").render({"redirect": redirect})
+    return html
 
 
-@app.post("/admin")
-async def login(user_id: str = Form(...), password: str = Form(...)):
+@app.post("/login")
+async def login(
+    user_id: str = Form(...),
+    password: str = Form(...),
+    redirect: Optional[str] = Form(None),
+):
     db = mydb.get_user(user_id)
     if not db or password != db.password:
         raise HTTPException(status_code=400, detail="Incorrect username or password")
     sessid = secrets.token_hex(32)
     mydb.set_session(sessid, user_id)
-    res = RedirectResponse("/admin", status_code=302)
+    res = RedirectResponse(redirect, status_code=302)
     res.set_cookie(key="sessid", value=sessid)
     return res
+
+
+@app.get("/private")
+async def private(user_id: str = Depends(auth)):
+    return {"hello": user_id}
