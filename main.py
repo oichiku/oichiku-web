@@ -105,6 +105,19 @@ async def login(
     return res
 
 
+@app.get("/logout")
+async def logout(sessid: Optional[str] = Cookie(None)):
+    if sessid:
+        db = mydb.get_session(sessid)
+        if db:
+            mydb.del_session(sessid)
+            return RedirectResponse("/", status_code=302)
+    return HTMLResponse(
+        content=templates.get_template("404.html").render({}),
+        status_code=404,
+    )
+
+
 @app.get("/private")
 async def private(user_id: str = Depends(auth)):
     return {"hello": user_id}

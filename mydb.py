@@ -62,6 +62,14 @@ def get_session(sessid):
     return x
 
 
+def del_session(sessid):
+    s = session.query(Sessions).filter(Sessions.sessid == sessid)
+    for d in s:
+        session.delete(d)
+    session.commit()
+    return 0
+
+
 if __name__ == "__main__":
     author, title, content, created_at, updated_at = get_post(0)
     print(author, title, content, created_at, updated_at)
