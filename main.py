@@ -15,6 +15,7 @@ from fastapi.templating import Jinja2Templates
 from jinja2 import Template
 from typing import Optional
 from starlette.exceptions import HTTPException as StarletteHTTPException
+from hashlib import sha256
 import mydb
 
 templates = Jinja2Templates(directory="templates")
@@ -96,7 +97,7 @@ async def login(
     redirect: Optional[str] = Form(None),
 ):
     db = mydb.get_user(user_id)
-    if not db or password != db.password:
+    if not db or sha256(password.encode()).hexdigest() != db.password:
         raise HTTPException(status_code=400, detail="Incorrect username or password")
     sessid = secrets.token_hex(32)
     mydb.set_session(sessid, user_id)
