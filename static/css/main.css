@@ -221,11 +221,23 @@ body noscript {
         top: -260px;
         left: 0;
         transition: all 0.7s;
+        z-index: 5;
+        -webkit-transform: translate3d(0, 0, 5px);
+        transform: translate3d(0, 0, 5px);
     }
     .menu a li {
         border-bottom: 1px solid #f4f4f4;
         padding: 10px 0;
         list-style: none;
+    }
+    .menuClosed {
+        left: 100vw;
+    }
+    .menuOpen {
+        position: absolute;
+        left: 0;
+        height: 100vh;
+        width: 100vw;
     }
     #menu-checkbox:checked+label+.menu {
         top: 0;
